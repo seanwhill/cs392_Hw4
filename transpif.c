@@ -92,12 +92,12 @@ int main(int argc, char **argv)
     float *output_matrix = malloc(matrix_width * matrix_height * sizeof(float));
 
     initialize_input_matrix(input_matrix, matrix_width, matrix_height);
-    //print_matrix(input_matrix, matrix_width, matrix_height);
+    print_matrix(input_matrix, matrix_width, matrix_height);
 
     transpose_matrix(input_matrix, output_matrix, matrix_width, matrix_height, block_width);
 
     printf("\n\n");
-    //print_matrix(output_matrix, matrix_height, matrix_width); // switched height and width from first one because it is the transposed matrix
+    print_matrix(output_matrix, matrix_height, matrix_width); // switched height and width from first one because it is the transposed matrix
 
     free(input_matrix);
     free(output_matrix);

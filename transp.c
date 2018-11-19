@@ -87,16 +87,21 @@ int main(int argc, char **argv)
 	matrix_width = atoi(argv[1]);
     block_width = atoi(argv[2]);
 
+    if(block_width > matrix_width){
+        fprintf(stderr, "Block width needs to be the same or smaller than the matrix width");
+        return -1;
+    }
+
     float *input_matrix = malloc(matrix_width * matrix_width * sizeof(float)); //allocates a matrix of width matrix_width
     float *output_matrix = malloc(matrix_width * matrix_width * sizeof(float)); //allocates a matrix of width matrix_width
 
     initialize_input_matrix(input_matrix, matrix_width);
 
-    //print_matrix(input_matrix, matrix_width);
+    print_matrix(input_matrix, matrix_width);
     transpose_matrix(input_matrix, output_matrix, matrix_width, block_width);
 
     printf("\n\n");
-    //print_matrix(output_matrix, matrix_width);
+    print_matrix(output_matrix, matrix_width);
 
     free(input_matrix);
     free(output_matrix);
