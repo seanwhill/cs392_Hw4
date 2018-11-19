@@ -6,6 +6,7 @@
 
 /*
 Initializes the input matrix to be filled with random numbers between 0 and 10
+
 */
 void initialize_input_matrix(float *input_matrix, int matrix_width){
     int i, j;
